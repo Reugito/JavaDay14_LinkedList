@@ -13,8 +13,9 @@ public class LinkedList {
 		
 		public static void main(String[] args) {
 			appendList(56);
-			appendList(30);
 			appendList(70);
+			printList();
+			insertBetween(56, 30);
 			printList();
 		}
 	}
@@ -27,6 +28,18 @@ public class LinkedList {
 	         currNode = currNode.next;
 	     }
 	     System.out.println(currNode);
+	 }
+	 
+	 public static void insertBetween(int position, int data) {
+		 Node currentNode = head;
+		 Node newNode = new Node(data);
+		 
+		 while(currentNode.data != position) {
+			 System.out.println(currentNode.data);
+			 currentNode = currentNode.next;
+		 }
+		 newNode.next  = currentNode.next;
+		 currentNode.next = newNode;
 	 }
 	 
 	 public static void appendList(int data) {
