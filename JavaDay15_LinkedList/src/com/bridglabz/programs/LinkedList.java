@@ -14,8 +14,8 @@ public class LinkedList {
 		public static void main(String[] args) {
 			appendList(56);
 			appendList(70);
-			printList();
 			insertBetween(56, 30);
+			pop();
 			printList();
 		}
 	}
@@ -55,5 +55,11 @@ public class LinkedList {
 			 }
 			 currentNode.next = newNode;
 		 }
+	 }
+	 
+	 public static void pop() {
+		 Node currentNode = head.next;
+		 head.next = null;
+		 head = currentNode;
 	 }
 }
